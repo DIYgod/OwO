@@ -1,0 +1,46 @@
+.OwO {
+    position: relative;
+
+    &:hover {
+        .OwO-logo {
+            color: #444;
+        }
+    }
+
+    &.OwO-open {
+        .OwO-logo {
+            border-radius: 4px 4px 0 0;
+            border-bottom: none;
+        }
+        .OwO-body {
+            display: block;
+        }
+    }
+
+    .OwO-logo {
+        position: relative;
+        display: inline-block;
+        color: #888;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        padding: 2px 5px;
+        cursor: pointer;
+        height: 22px;
+        box-sizing: border-box;
+        user-select: none;
+        z-index: 2;
+    }
+
+    .OwO-body {
+        display: none;
+        position: absolute;
+        width: 400px;
+        height: 200px;
+        background: #fff;
+        border: 1px solid #ddd;
+        z-index: 1;
+        top: 21px;
+    }
+}
