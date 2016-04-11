@@ -1,6 +1,6 @@
 {
   "name": "owo",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Lovely Emoticon and Emoji Keyboard for textarea or input",
   "main": "dist/OwO.min.js",
   "scripts": {
