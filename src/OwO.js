@@ -18,8 +18,8 @@
             xhr.onreadystatechange = () => {
                 if (xhr.readyState === 4) {
                     if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
-                        this.data = JSON.parse(xhr.responseText);
-                        this.init();
+                        this.odata = JSON.parse(xhr.responseText);
+                        this.init(option);
                     }
                     else {
                         console.log('OwO data request was unsuccessful: ' + xhr.status);
@@ -30,13 +30,64 @@
             xhr.send(null);
         }
 
-        init() {
-            console.log(this.data);
+        init(option) {
+            this.area = option.target;
+            this.packages = Object.keys(this.odata);
 
+            // fill in HTML
+            let html = `
+            <div class="OwO-logo"><span>${option.logo}</span></div>
+            <div class="OwO-body" style="width: ${option.width}">`;
+            
+            for (let i = 0; i < this.packages.length; i++) {
+
+                html += `
+                <ul class="OwO-items" style="max-height: ${parseInt(option.maxHeight) - 53 + 'px'};">`;
+
+                let opackage = this.odata[this.packages[i]];
+                for (let i = 0; i < opackage.length; i++) {
+
+                    html += `
+                    <li title="${opackage[i].text}">${opackage[i].icon}</li>`;
+
+                }
+
+                html += `
+                </ul>`;
+            }
+            
+            html += `
+                <div class="OwO-bar">
+                    <ul class="OwO-packages">`;
+
+                    for (let i = 0; i < this.packages.length; i++) {
+
+                        html += `
+                        <li class="OwO-package-active"><span>${this.packages[i]}</span></li>`
+
+                    }
+
+            html += `
+                    </ul>
+                </div>
+            </div>
+            `;
+            this.container.innerHTML = html;
+
+            // bind event
             this.logo = this.container.getElementsByClassName('OwO-logo')[0];
             this.logo.addEventListener('click', () => {
                 this.toggle();
-            })
+            });
+
+            this.container.getElementsByClassName('OwO-items')[0].addEventListener('click', (e)=> {
+                if (e.target && e.target.nodeName.toUpperCase() === 'LI') {
+                    const cursorPos = this.area.selectionEnd;
+                    let areaValue = this.area.value;
+                    this.area.value = areaValue.slice(0, cursorPos) + e.target.innerHTML + areaValue.slice(cursorPos);
+                    this.area.focus();
+                }
+            });
         }
 
         toggle() {
