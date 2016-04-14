@@ -44,11 +44,12 @@
                 html += `
                 <ul class="OwO-items" style="max-height: ${parseInt(option.maxHeight) - 53 + 'px'};">`;
 
-                let opackage = this.odata[this.packages[i]];
+                let opackage = this.odata[this.packages[i]].container;
+                console.log(opackage);
                 for (let i = 0; i < opackage.length; i++) {
 
                     html += `
-                    <li title="${opackage[i].text}">${opackage[i].icon}</li>`;
+                    <li class="OwO-item" title="${opackage[i].text}">${opackage[i].icon}</li>`;
 
                 }
 
@@ -63,7 +64,7 @@
                     for (let i = 0; i < this.packages.length; i++) {
 
                         html += `
-                        <li class="OwO-package-active"><span>${this.packages[i]}</span></li>`
+                        <li><span>${this.packages[i]}</span></li>`
 
                     }
 
@@ -80,14 +81,32 @@
                 this.toggle();
             });
 
-            this.container.getElementsByClassName('OwO-items')[0].addEventListener('click', (e)=> {
-                if (e.target && e.target.nodeName.toUpperCase() === 'LI') {
+            this.container.getElementsByClassName('OwO-body')[0].addEventListener('click', (e)=> {
+                let target = null;
+                if (e.target.classList.contains('OwO-item')) {
+                    target = e.target;
+                }
+                else if (e.target.parentNode.classList.contains('OwO-item')) {
+                    target = e.target.parentNode;
+                }
+                if (target) {
                     const cursorPos = this.area.selectionEnd;
                     let areaValue = this.area.value;
-                    this.area.value = areaValue.slice(0, cursorPos) + e.target.innerHTML + areaValue.slice(cursorPos);
+                    this.area.value = areaValue.slice(0, cursorPos) + target.innerHTML + areaValue.slice(cursorPos);
                     this.area.focus();
                 }
             });
+
+            this.packagesEle = this.container.getElementsByClassName('OwO-packages')[0];
+            for (let i = 0; i < this.packagesEle.children.length; i++) {
+                ((index) =>{
+                    this.packagesEle.children[i].addEventListener('click', () => {
+                        this.tab(index);
+                    });
+                })(i);
+            }
+
+            this.tab(0);
         }
 
         toggle() {
@@ -99,12 +118,22 @@
             }
         }
 
-        open() {
+        tab(index) {
+            const itemsShow = this.container.getElementsByClassName('OwO-items-show')[0];
+            if (itemsShow) {
+                itemsShow.classList.remove('OwO-items-show');
+            }
+            this.container.getElementsByClassName('OwO-items')[index].classList.add('OwO-items-show');
 
+            const packageActive = this.container.getElementsByClassName('OwO-package-active')[0];
+            if (packageActive) {
+                packageActive.classList.remove('OwO-package-active');
+            }
+            this.packagesEle.getElementsByTagName('li')[index].classList.add('OwO-package-active');
         }
     }
     if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-        module.exports = OwO
+        module.exports = OwO;
     }
     else {
         window.OwO = OwO;

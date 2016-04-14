@@ -1,5 +1,6 @@
 .OwO {
     position: relative;
+    user-select: none;
 
     &:hover {
         .OwO-logo {
@@ -30,7 +31,6 @@
         cursor: pointer;
         height: 22px;
         box-sizing: border-box;
-        user-select: none;
         z-index: 2;
 
         &:hover {
@@ -52,6 +52,8 @@
         border-radius: 0 4px 4px 4px;
 
         .OwO-items {
+            user-select: none;
+            display: none;
             padding: 10px;
             margin: 0;
             overflow: scroll;
@@ -74,7 +76,15 @@
                     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
                     animation: my-face 5s infinite ease-in-out;
                 }
+
+                img {
+                    max-width: 100px;
+                }
             }
+        }
+
+        .OwO-items-show {
+            display: block;
         }
 
         .OwO-bar {
