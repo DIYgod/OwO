@@ -49,6 +49,7 @@
         height: 22px;
         box-sizing: border-box;
         z-index: 2;
+        line-height: 16px;
 
         &:hover {
             span {
@@ -99,7 +100,7 @@
         .OwO-items-emoji {
             .OwO-item {
                 font-size: 20px;
-                line-height: 20px;
+                line-height: 19px;
             }
         }
 
