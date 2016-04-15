@@ -100,6 +100,7 @@
                     let areaValue = this.area.value;
                     this.area.value = areaValue.slice(0, cursorPos) + target.innerHTML + areaValue.slice(cursorPos);
                     this.area.focus();
+                    this.toggle();
                 }
             });
 
