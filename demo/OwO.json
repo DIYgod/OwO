@@ -1,5 +1,6 @@
 {
     "颜文字": {
+        "type": "emoticon",
         "container": [
                 {
                     "icon": "OωO",
@@ -92,10 +93,27 @@
                 {
                     "icon": "( ,,´･ω･)ﾉ\"(´っω･｀｡)",
                     "text": "摸摸头"
+                },
+                {
+                    "icon": "╮(╯▽╰)╭ ",
+                    "text": "无奈"
+                },
+                {
+                    "icon": "o(*////▽////*)q ",
+                    "text": "脸红"
+                },
+                {
+                    "icon": "＞﹏＜",
+                    "text": ""
+                },
+                {
+                    "icon": "( ๑´•ω•) \"(ㆆᴗㆆ)",
+                    "text": ""
                 }
         ]
     },
     "Emoji": {
+        "type": "emoji",
         "container": [
             {
                 "icon": "😂",
@@ -216,10 +234,39 @@
             {
                 "icon": "🌝",
                 "text": ""
+            },
+            {
+                "icon": "🙈",
+                "text": ""
+            },
+            {
+                "icon": "💊",
+                "text": ""
+            },
+            {
+                "icon": "😶",
+                "text": ""
+            },
+            {
+                "icon": "🙏",
+                "text": ""
+            },
+            {
+                "icon": "🍦",
+                "text": ""
+            },
+            {
+                "icon": "🍉",
+                "text": ""
+            },
+            {
+                "icon": "😣",
+                "text": ""
             }
         ]
     },
     "图片表情": {
+        "type": "image",
         "container": [
             {
                 "icon": "<img src=\"http://o5mvhz1ad.qnssl.com/face1.jpg\">",
@@ -238,11 +285,44 @@
                 "text": "face4"
             },
             {
-                "icon": "<img src=\"http://o5mvhz1ad.qnssl.com/face5.gif\">",
-                "text": "face5"
+                "icon": "<img src=\"http://o5mvhz1ad.qnssl.com/face5.jpg\">",
+                "text": "face3"
             },
             {
                 "icon": "<img src=\"http://o5mvhz1ad.qnssl.com/face6.jpg\">",
+                "text": "face3"
+            }
+        ]
+    },
+    "岁纳京子": {
+        "type": "image",
+        "container": [
+            {
+                "icon": "<img src=\"http://o5mvhz1ad.qnssl.com/jz1.jpg\">",
+                "text": "face1"
+            },
+            {
+                "icon": "<img src=\"http://o5mvhz1ad.qnssl.com/jz2.gif\">",
+                "text": "face2"
+            },
+            {
+                "icon": "<img src=\"http://o5mvhz1ad.qnssl.com/jz3.gif\">",
+                "text": "face3"
+            },
+            {
+                "icon": "<img src=\"http://o5mvhz1ad.qnssl.com/jz4.gif\">",
+                "text": "face4"
+            },
+            {
+                "icon": "<img src=\"http://o5mvhz1ad.qnssl.com/jz5.jpg\">",
+                "text": "face5"
+            },
+            {
+                "icon": "<img src=\"http://o5mvhz1ad.qnssl.com/jz6.gif\">",
+                "text": "face6"
+            },
+            {
+                "icon": "<img src=\"http://o5mvhz1ad.qnssl.com/jz7.jpg\">",
                 "text": "face6"
             }
         ]

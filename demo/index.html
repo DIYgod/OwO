@@ -52,18 +52,18 @@
         <h2>Lovely Emoticon and Emoji Keyboard for textarea or input</h2>
         <p>Made by <a href="https://www.anotherhome.net/" target="_blank">DIYgod</a>. Available on <a href="https://github.com/DIYgod/OwO" target="_blank">GitHub</a>. Licensed MIT.</p>
         <hr>
-        <textarea class="OwO-textarea" style="width: 100%; height: 100px; margin-bottom: 10px; padding: 10px;"></textarea>
+        <textarea class="OwO-textarea" style="width: 100%; height: 50px; margin-bottom: 10px; padding: 10px;"></textarea>
         <div class="OwO"></div>
     </div>
     <script src="../dist/OwO.min.js"></script>
     <script>
         var OwO_demo = new OwO({
-            logo: 'OωO颜文字',
+            logo: 'OωO表情',
             container: document.getElementsByClassName('OwO')[0],
             target: document.getElementsByClassName('OwO-textarea')[0],
-            dataURL: './OwO.json',
+            api: './OwO.json',
             position: 'down',
-            width: '500px',
+            width: '100%',
             maxHeight: '250px'
         });
     </script>

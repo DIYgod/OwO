@@ -2,9 +2,13 @@
     class OwO {
         constructor(option) {
             const defaultOption = {
+                logo: 'OwO表情',
                 container: document.getElementsByClassName('OwO')[0],
                 target: document.getElementsByTagName('textarea')[0],
-                dataURL: 'https://api.anotherhome.net/OwO/OwO.json'
+                position: 'down',
+                width: '100%',
+                maxHeight: '250px',
+                api: 'https://api.anotherhome.net/OwO/OwO.json'
             };
             for (let defaultKey in defaultOption) {
                 if (defaultOption.hasOwnProperty(defaultKey) && !option.hasOwnProperty(defaultKey)) {
@@ -13,6 +17,9 @@
             }
             this.container = option.container;
             this.target = option.target;
+            if (option.position === 'up') {
+                this.container.classList.add('OwO-up');
+            }
 
             const xhr = new XMLHttpRequest();
             xhr.onreadystatechange = () => {
@@ -26,7 +33,7 @@
                     }
                 }
             };
-            xhr.open('get', option.dataURL, true);
+            xhr.open('get', option.api, true);
             xhr.send(null);
         }
 
@@ -42,10 +49,9 @@
             for (let i = 0; i < this.packages.length; i++) {
 
                 html += `
-                <ul class="OwO-items" style="max-height: ${parseInt(option.maxHeight) - 53 + 'px'};">`;
+                <ul class="OwO-items OwO-items-${this.odata[this.packages[i]].type}" style="max-height: ${parseInt(option.maxHeight) - 53 + 'px'};">`;
 
                 let opackage = this.odata[this.packages[i]].container;
-                console.log(opackage);
                 for (let i = 0; i < opackage.length; i++) {
 
                     html += `
