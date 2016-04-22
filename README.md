@@ -19,7 +19,7 @@ Screenshot
 ## Install
 
 ```js
-$ npm install owo
+$ npm install owo --save
 ```
 
 ## Usage
