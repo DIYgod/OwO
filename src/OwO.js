@@ -96,9 +96,36 @@
                     target = e.target.parentNode;
                 }
                 if (target) {
-                    const cursorPos = this.area.selectionEnd;
-                    let areaValue = this.area.value;
-                    this.area.value = areaValue.slice(0, cursorPos) + target.innerHTML + areaValue.slice(cursorPos);
+                    const targetTag = target.tagName.toLowerCase();
+                    if (targetTag === 'textarea' || targetTag === 'input') {
+                        const cursorPos = this.area.selectionEnd;
+                        let areaValue = this.area.value;
+                        this.area.value = areaValue.slice(0, cursorPos) + target.innerHTML + areaValue.slice(cursorPos);
+                    }
+                    else { // if target is edited with HTML
+                        // get selection and check if selection is in this.area
+                        let selection = window.getSelection();
+                        let range = selection.getRangeAt(0);
+                        const selectionInArea = this.area.compareDocumentPosition(selection.anchorNode) & 16 && this.area.compareDocumentPosition(selection.focusNode) & 16;
+
+                        // parse innerHTML to DOM
+                        let temp = document.createElement('div');
+                        temp.innerHTML = target.innerHTML;
+
+                        // clear and append to selection
+                        if (selectionInArea) {
+                            range.deleteContents();
+                            while (temp.firstChild) {
+                                range.insertNode(temp.firstChild);
+                            }
+                        }
+                        else {
+                            while (temp.firstChild) {
+                                this.area.appendChild(temp.firstChild);
+                            }
+                        }
+                    }
+
                     this.area.focus();
                     this.toggle();
                 }
