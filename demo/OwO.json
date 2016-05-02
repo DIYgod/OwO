@@ -109,6 +109,10 @@
                 {
                     "icon": "( ๑´•ω•) \"(ㆆᴗㆆ)",
                     "text": ""
+                },
+                {
+                    "icon": "(｡•ˇ‸ˇ•｡)",
+                    "text": ""
                 }
         ]
     },
@@ -286,11 +290,15 @@
             },
             {
                 "icon": "<img src=\"//o5mvhz1ad.qnssl.com/face5.jpg\">",
-                "text": "face3"
+                "text": "face5"
             },
             {
                 "icon": "<img src=\"//o5mvhz1ad.qnssl.com/face6.jpg\">",
-                "text": "face3"
+                "text": "face6"
+            },
+            {
+                "icon": "<img src=\"//o5mvhz1ad.qnssl.com/face7.jpg\">",
+                "text": "face7"
             }
         ]
     },
