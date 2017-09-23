@@ -6,7 +6,11 @@
 [![npm](https://img.shields.io/npm/dt/owo.svg?style=flat-square)](https://www.npmjs.com/package/owo)
 [![%e2%9d%a4](https://img.shields.io/badge/made%20with-%e2%9d%a4-ff69b4.svg?style=flat-square)](https://www.anotherhome.net/)
 
-Lovely Emoticon and Emoji Keyboard for textarea or input
+> Lovely Emoticon and Emoji Keyboard for textarea or input
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/ucdjQF7wcNNiWY9mCEpAeGLz/DIYgod/OwO'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/ucdjQF7wcNNiWY9mCEpAeGLz/DIYgod/OwO.svg' />
+</a>
 
 ## Introduction
 
