@@ -8,9 +8,7 @@
 
 > Lovely Emoticon and Emoji Keyboard for textarea or input
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/ucdjQF7wcNNiWY9mCEpAeGLz/DIYgod/OwO'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/ucdjQF7wcNNiWY9mCEpAeGLz/DIYgod/OwO.svg' />
-</a>
+
 
 ## Introduction
 
