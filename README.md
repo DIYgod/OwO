@@ -56,7 +56,7 @@ var OwO_demo = new OwO({
 {
     logo: 'OωO表情',                                               // OwO button text, default: `OωO表情`
     container: document.getElementsByClassName('OwO')[0],         // OwO container, default: `document.getElementsByClassName('OwO')[0]`
-    target: document.getElementsByClassName('OwO-textarea')[0],   // OwO target input or textarea, default: `document.getElementsByTagName('textarea')[0]`
+    target: document.getElementsByClassName('OwO-textarea')[0],   // OwO target input, textarea, or element with contenteditable attribute, default: `document.getElementsByTagName('textarea')[0]`
     api: './OwO.json',                                            // OwO Emoticon data api, default: `https://api.anotherhome.net/OwO/OwO.json`
     position: 'down',                                             // OwO body position, default: `down`
     width: '100%',                                                // OwO body width, default: `100%`
